@@ -12,6 +12,8 @@
 		ABA68F882C782374000CCF90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABA68F872C782374000CCF90 /* Assets.xcassets */; };
 		ABA68F8B2C782374000CCF90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABA68F8A2C782374000CCF90 /* Preview Assets.xcassets */; };
 		ABA68F922C7860D3000CCF90 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA68F912C7860D3000CCF90 /* TabView.swift */; };
+		ABA68F942C788B13000CCF90 /* MoviePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA68F932C788B13000CCF90 /* MoviePage.swift */; };
+		ABA68F962C788B3B000CCF90 /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA68F952C788B3B000CCF90 /* SearchPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		ABA68F872C782374000CCF90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABA68F8A2C782374000CCF90 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ABA68F912C7860D3000CCF90 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		ABA68F932C788B13000CCF90 /* MoviePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePage.swift; sourceTree = "<group>"; };
+		ABA68F952C788B3B000CCF90 /* SearchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +60,10 @@
 				ABA68F832C782373000CCF90 /* ReflixApp.swift */,
 				ABA68F852C782373000CCF90 /* ContentView.swift */,
 				ABA68F912C7860D3000CCF90 /* TabView.swift */,
+				ABA68F932C788B13000CCF90 /* MoviePage.swift */,
 				ABA68F872C782374000CCF90 /* Assets.xcassets */,
 				ABA68F892C782374000CCF90 /* Preview Content */,
+				ABA68F952C788B3B000CCF90 /* SearchPage.swift */,
 			);
 			path = Reflix;
 			sourceTree = "<group>";
@@ -143,6 +149,8 @@
 				ABA68F862C782373000CCF90 /* ContentView.swift in Sources */,
 				ABA68F922C7860D3000CCF90 /* TabView.swift in Sources */,
 				ABA68F842C782373000CCF90 /* ReflixApp.swift in Sources */,
+				ABA68F942C788B13000CCF90 /* MoviePage.swift in Sources */,
+				ABA68F962C788B3B000CCF90 /* SearchPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

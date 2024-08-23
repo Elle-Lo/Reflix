@@ -23,19 +23,7 @@ struct TabBarView: View {
     
 }
 
-//Movie頁的畫面
-struct MovieTabView: View {
-    var body: some View {
-        Text("Movie")
-    }
-}
 
-//Search頁的畫面
-struct SearchTabView: View {
-    var body: some View {
-        Text("Search")
-    }
-}
 
 #Preview {
     TabBarView()
