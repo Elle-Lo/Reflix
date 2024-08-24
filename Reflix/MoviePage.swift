@@ -111,9 +111,7 @@ struct MovieTabView: View {
     }
     
     
-    
-    
-    
+
 }
 
 
@@ -121,6 +119,8 @@ struct MovieTabView: View {
     MovieTabView()
 }
 
+
 //#Preview("SearchTabView (Landscape)", traits: .landscapeLeft) {
 //    MovieTabView()
 //}
+
