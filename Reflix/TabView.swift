@@ -3,7 +3,6 @@ import SwiftUI
 struct TabBarView: View {
     
     init() {
-            // 設置未選中的 tab item 顏色
             UITabBar.appearance().unselectedItemTintColor = UIColor.lightGray
         }
     

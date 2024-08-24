@@ -18,20 +18,18 @@ struct SearchTabView: View {
         NavigationView {
             VStack(alignment: .leading) {
                 
-                // 自訂的標題
                 Text("搜尋")
                     .font(.custom("PingFang TC", size: 30))
                     .foregroundColor(.white)
                     .padding(.horizontal, 16)
                     .padding(.top, 8)
                 
-                // 自訂的搜尋框，包含放大鏡圖標
                 HStack {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(.gray)
                     
                     TextField("Search", text: $searchText, onCommit: {
-                        addSearchRecord() // 當按下 Enter 鍵時，將搜尋紀錄添加到列表
+                        addSearchRecord()
                     })
                     .padding(8)
                 }
@@ -53,8 +51,8 @@ struct SearchTabView: View {
                         movieRecords.removeAll()
                     }) {
                         Text("清除")
-                            .font(.subheadline) // 將按鈕文字變小
-                            .padding(.horizontal, 10) // 減少按鈕的水平內邊距
+                            .font(.subheadline)
+                            .padding(.horizontal, 10)
                             .padding(.vertical, 4)
                             .background(
                                 ZStack {
@@ -71,18 +69,16 @@ struct SearchTabView: View {
                 List {
                     ForEach(filteredRecords, id: \.self) { record in
                         HStack {
-                            // 左側的放大鏡圖標
+                           
                             Image(systemName: "magnifyingglass")
                                 .foregroundColor(.gray)
                                 .font(.system(size: 15))
                             
-                            // 搜尋紀錄的文字
                             Text(record)
                                 .foregroundColor(.white)
                             
                             Spacer()
                             
-                            // 右側的叉叉圖標按鈕
                             Button(action: {
                                 if let index = movieRecords.firstIndex(of: record) {
                                     movieRecords.remove(at: index)
