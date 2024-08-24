@@ -2,7 +2,6 @@ import SwiftUI
 
 struct ContentView: View {
     
-    
     var body: some View {
         TabBarView()
         
@@ -15,6 +14,7 @@ struct ContentView: View {
     ContentView()
 }
 
-#Preview("ContentView (Landscape)", traits: .landscapeLeft) {
-ContentView()
-}
+//#Preview("ContentView (Landscape)", traits: .landscapeLeft) {
+//ContentView()
+//}
+

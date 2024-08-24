@@ -33,6 +33,7 @@ struct TabBarView: View {
     TabBarView()
 }
 
-#Preview("ContentView (Landscape)", traits: .landscapeLeft) {
-    TabBarView()
-}
+//#Preview("ContentView (Landscape)", traits: .landscapeLeft) {
+//    TabBarView()
+//}
+
