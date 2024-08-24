@@ -2,6 +2,10 @@ import SwiftUI
 
 struct TabBarView: View {
     
+    init() {
+            UITabBar.appearance().unselectedItemTintColor = UIColor.lightGray
+        }
+    
     @State var selectedTab = 0
     
     var body: some View {
@@ -18,24 +22,12 @@ struct TabBarView: View {
                     Label("search", image: "magnifier")
                 }.tag(2)
         }
-        .accentColor(.black)
+        .accentColor(.white)
     }
     
 }
 
-//Movie頁的畫面
-struct MovieTabView: View {
-    var body: some View {
-        Text("Movie")
-    }
-}
 
-//Search頁的畫面
-struct SearchTabView: View {
-    var body: some View {
-        Text("Search")
-    }
-}
 
 #Preview {
     TabBarView()
