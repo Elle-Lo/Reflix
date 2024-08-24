@@ -61,9 +61,9 @@
 				ABA68F852C782373000CCF90 /* ContentView.swift */,
 				ABA68F912C7860D3000CCF90 /* TabView.swift */,
 				ABA68F932C788B13000CCF90 /* MoviePage.swift */,
+				ABA68F952C788B3B000CCF90 /* SearchPage.swift */,
 				ABA68F872C782374000CCF90 /* Assets.xcassets */,
 				ABA68F892C782374000CCF90 /* Preview Content */,
-				ABA68F952C788B3B000CCF90 /* SearchPage.swift */,
 			);
 			path = Reflix;
 			sourceTree = "<group>";
