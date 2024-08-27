@@ -14,13 +14,17 @@ struct MovieTabView: View {
             List {
                 // 第一個 Cell: 使用 CollectCell (上映中電影)
                 CollectCell(title: "上映中", movies: nowPlayingMovies)
-
+                    .listRowBackground(Color.clear)
                 // 第二個 Cell: 使用 CollectCell (即將上映電影)
                 CollectCell(title: "即將上映", movies: upcomingMovies)
+                    .listRowBackground(Color.clear)
             }
+            .listStyle(PlainListStyle())
+            .background(Color.clear)
             .navigationTitle("我的電影")
+            
         }
-        
+        .background(Color.reflixBlack.ignoresSafeArea())
         .onAppear() {
             fetchTopMovies(limit: 10) //抓取熱映電影10 筆資料並更新UI
             fetchUpComingMovies(limit: 10) //抓取10筆即將上映資料 並更新UI
