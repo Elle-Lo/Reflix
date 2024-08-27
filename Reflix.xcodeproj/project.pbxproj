@@ -12,14 +12,15 @@
 		ABA68F882C782374000CCF90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABA68F872C782374000CCF90 /* Assets.xcassets */; };
 		ABA68F8B2C782374000CCF90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABA68F8A2C782374000CCF90 /* Preview Assets.xcassets */; };
 		ABA68F922C7860D3000CCF90 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA68F912C7860D3000CCF90 /* TabView.swift */; };
-		ABA68F962C788B3B000CCF90 /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA68F952C788B3B000CCF90 /* SearchPage.swift */; };
+		ABA68F962C788B3B000CCF90 /* SearchTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA68F952C788B3B000CCF90 /* SearchTabView.swift */; };
+		ABA68F982C7A51F8000CCF90 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA68F972C7A51F8000CCF90 /* MovieDetailView.swift */; };
+		ABA68F9B2C7C61E8000CCF90 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = ABA68F9A2C7C61E8000CCF90 /* Kingfisher */; };
 		D4B401022C7A188C009842BD /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B401012C7A188C009842BD /* MovieData.swift */; };
 		D4B401042C7A18C4009842BD /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B401032C7A18C4009842BD /* CollectionViewCell.swift */; };
 		D4B401072C7A1D7E009842BD /* MoviePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA68F932C788B13000CCF90 /* MoviePage.swift */; };
-		D4E2B8FA2C7C11240033615C /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E2B8F92C7C11240033615C /* MovieDetailView.swift */; };
-		D4E2B9282C7D74C20033615C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D4E2B9272C7D74C20033615C /* Kingfisher */; };
-		D4E2B92A2C7D76470033615C /* YouTubePlayerFullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E2B9292C7D76470033615C /* YouTubePlayerFullScreenView.swift */; };
-		D4E2B92D2C7D76860033615C /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = D4E2B92C2C7D76860033615C /* YouTubePlayerKit */; };
+		D4FFBCF62C7DAF5F00180BED /* MovieDetailView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FFBCF52C7DAF5F00180BED /* MovieDetailView2.swift */; };
+		D4FFBCF82C7DAFCE00180BED /* YouTubePlayerFullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FFBCF72C7DAFCE00180BED /* YouTubePlayerFullScreenView.swift */; };
+		D4FFBCFB2C7DB01600180BED /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = D4FFBCFA2C7DB01600180BED /* YouTubePlayerKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,11 +31,12 @@
 		ABA68F8A2C782374000CCF90 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ABA68F912C7860D3000CCF90 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		ABA68F932C788B13000CCF90 /* MoviePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePage.swift; sourceTree = "<group>"; };
-		ABA68F952C788B3B000CCF90 /* SearchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage.swift; sourceTree = "<group>"; };
+		ABA68F952C788B3B000CCF90 /* SearchTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabView.swift; sourceTree = "<group>"; };
+		ABA68F972C7A51F8000CCF90 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		D4B401012C7A188C009842BD /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
 		D4B401032C7A18C4009842BD /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		D4E2B8F92C7C11240033615C /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
-		D4E2B9292C7D76470033615C /* YouTubePlayerFullScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubePlayerFullScreenView.swift; sourceTree = "<group>"; };
+		D4FFBCF52C7DAF5F00180BED /* MovieDetailView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView2.swift; sourceTree = "<group>"; };
+		D4FFBCF72C7DAFCE00180BED /* YouTubePlayerFullScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubePlayerFullScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,8 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4E2B92D2C7D76860033615C /* YouTubePlayerKit in Frameworks */,
-				D4E2B9282C7D74C20033615C /* Kingfisher in Frameworks */,
+				D4FFBCFB2C7DB01600180BED /* YouTubePlayerKit in Frameworks */,
+				ABA68F9B2C7C61E8000CCF90 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +72,12 @@
 			isa = PBXGroup;
 			children = (
 				D4B401052C7A196F009842BD /* FirstPage */,
-				D4E2B9292C7D76470033615C /* YouTubePlayerFullScreenView.swift */,
-				D4E2B8F92C7C11240033615C /* MovieDetailView.swift */,
-				ABA68F952C788B3B000CCF90 /* SearchPage.swift */,
+				ABA68F852C782373000CCF90 /* ContentView.swift */,
+				ABA68F952C788B3B000CCF90 /* SearchTabView.swift */,
 				ABA68F912C7860D3000CCF90 /* TabView.swift */,
 				ABA68F832C782373000CCF90 /* ReflixApp.swift */,
-				ABA68F852C782373000CCF90 /* ContentView.swift */,
+				D4FFBCF52C7DAF5F00180BED /* MovieDetailView2.swift */,
+				D4FFBCF72C7DAFCE00180BED /* YouTubePlayerFullScreenView.swift */,
 				ABA68F872C782374000CCF90 /* Assets.xcassets */,
 				ABA68F892C782374000CCF90 /* Preview Content */,
 			);
@@ -96,6 +98,7 @@
 				ABA68F932C788B13000CCF90 /* MoviePage.swift */,
 				D4B401012C7A188C009842BD /* MovieData.swift */,
 				D4B401032C7A18C4009842BD /* CollectionViewCell.swift */,
+				ABA68F972C7A51F8000CCF90 /* MovieDetailView.swift */,
 			);
 			path = FirstPage;
 			sourceTree = "<group>";
@@ -117,8 +120,8 @@
 			);
 			name = Reflix;
 			packageProductDependencies = (
-				D4E2B9272C7D74C20033615C /* Kingfisher */,
-				D4E2B92C2C7D76860033615C /* YouTubePlayerKit */,
+				ABA68F9A2C7C61E8000CCF90 /* Kingfisher */,
+				D4FFBCFA2C7DB01600180BED /* YouTubePlayerKit */,
 			);
 			productName = Reflix;
 			productReference = ABA68F802C782373000CCF90 /* Reflix.app */;
@@ -149,8 +152,8 @@
 			);
 			mainGroup = ABA68F772C782373000CCF90;
 			packageReferences = (
-				D4E2B9262C7D74C20033615C /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				D4E2B92B2C7D76860033615C /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
+				ABA68F992C7C61E8000CCF90 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				D4FFBCF92C7DB01600180BED /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
 			);
 			productRefGroup = ABA68F812C782373000CCF90 /* Products */;
 			projectDirPath = "";
@@ -178,15 +181,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4FFBCF82C7DAFCE00180BED /* YouTubePlayerFullScreenView.swift in Sources */,
+				D4FFBCF62C7DAF5F00180BED /* MovieDetailView2.swift in Sources */,
 				D4B401022C7A188C009842BD /* MovieData.swift in Sources */,
 				ABA68F862C782373000CCF90 /* ContentView.swift in Sources */,
 				ABA68F922C7860D3000CCF90 /* TabView.swift in Sources */,
 				D4B401042C7A18C4009842BD /* CollectionViewCell.swift in Sources */,
 				ABA68F842C782373000CCF90 /* ReflixApp.swift in Sources */,
 				D4B401072C7A1D7E009842BD /* MoviePage.swift in Sources */,
-				D4E2B92A2C7D76470033615C /* YouTubePlayerFullScreenView.swift in Sources */,
-				D4E2B8FA2C7C11240033615C /* MovieDetailView.swift in Sources */,
-				ABA68F962C788B3B000CCF90 /* SearchPage.swift in Sources */,
+				ABA68F982C7A51F8000CCF90 /* MovieDetailView.swift in Sources */,
+				ABA68F962C788B3B000CCF90 /* SearchTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +337,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ellelo.Reflix1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ellelo.Reflix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -362,7 +366,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ellelo.Reflix1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ellelo.Reflix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -394,7 +398,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D4E2B9262C7D74C20033615C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		ABA68F992C7C61E8000CCF90 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
@@ -402,7 +406,7 @@
 				minimumVersion = 7.12.0;
 			};
 		};
-		D4E2B92B2C7D76860033615C /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
+		D4FFBCF92C7DB01600180BED /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit";
 			requirement = {
@@ -413,14 +417,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D4E2B9272C7D74C20033615C /* Kingfisher */ = {
+		ABA68F9A2C7C61E8000CCF90 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D4E2B9262C7D74C20033615C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = ABA68F992C7C61E8000CCF90 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		D4E2B92C2C7D76860033615C /* YouTubePlayerKit */ = {
+		D4FFBCFA2C7DB01600180BED /* YouTubePlayerKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D4E2B92B2C7D76860033615C /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			package = D4FFBCF92C7DB01600180BED /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
 			productName = YouTubePlayerKit;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -117,3 +117,7 @@ struct YouTubePlayerFullScreenView: View {
     
 }
 
+
+//#Preview {
+//    YouTubePlayerFullScreenView()
+//}

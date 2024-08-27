@@ -1,10 +1,11 @@
+
+
 //
 //  MovieDetailView.swift
 //  Reflix
 //
 //  Created by 池昀哲 on 2024/8/26.
 //
-
 import SwiftUI
 import Kingfisher
 
@@ -188,3 +189,7 @@ struct ExtractedView: View {
            
     }
 }
+
+//#Preview {
+//    MovieDetailView(movie: MovieSearchResult)
+//}
