@@ -8,23 +8,28 @@ struct TabBarView: View {
     
     @State var selectedTab = 0
     
-    var body: some View {
-        
-        TabView(selection: $selectedTab) {
-            
-            MovieTabView()
-                .tabItem {
-                    Label("movies", image: "movie")
-                }.tag(1)
-            
-            SearchTabView()
-                .tabItem {
-                    Label("search", image: "magnifier")
-                }.tag(2)
-        }
-        .accentColor(.white)
-    }
-    
+var body: some View {
+       TabView(selection: $selectedTab) {
+           
+           NavigationStack {  // 独立的 NavigationStack
+               MovieTabView()
+           }
+           .tabItem {
+               Label("Movies", image: "movie")
+           }
+           .tag(1)
+           
+           NavigationStack {  // 独立的 NavigationStack
+               SearchTabView()
+           }
+           .tabItem {
+               Label("Search", image: "magnifier")
+           }
+           .tag(2)
+       }
+       .accentColor(.white) // 设置选中标签的颜色
+       .background(Color.black.ignoresSafeArea(edges: .bottom)) // 设置TabBar背景颜色
+   }
 }
 
 
