@@ -6,7 +6,7 @@ struct MovieTabView: View {
     
     @State private var nowPlayingMovies: [Result] = [] // 儲存上映中電影
     @State private var upcomingMovies: [Result] = []   // 儲存即將上映電影
-    
+    //SwiftUI view 型別的定義裡，若想讓它的 property 能夠改變，不只要以 var 宣告成變數，還要記得加上 @State
     
     var body: some View {
 
@@ -14,11 +14,12 @@ struct MovieTabView: View {
             List {
                 // 第一個 Cell: 使用 CollectCell (上映中電影)
                 CollectCell(title: "上映中", movies: nowPlayingMovies)
-
                 // 第二個 Cell: 使用 CollectCell (即將上映電影)
                 CollectCell(title: "即將上映", movies: upcomingMovies)
             }
             .navigationTitle("我的電影")
+            .listStyle(PlainListStyle())
+            
         }
         
         .onAppear() {
@@ -111,9 +112,7 @@ struct MovieTabView: View {
     }
     
     
-    
-    
-    
+
 }
 
 
@@ -121,6 +120,8 @@ struct MovieTabView: View {
     MovieTabView()
 }
 
+
 //#Preview("SearchTabView (Landscape)", traits: .landscapeLeft) {
 //    MovieTabView()
 //}
+

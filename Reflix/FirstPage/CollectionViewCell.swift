@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Kingfisher
+
 
 struct CollectCell: View {
     let title: String
@@ -20,22 +22,24 @@ struct CollectCell: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: [GridItem(.fixed(150))], spacing: 16) {
                     ForEach(movies, id: \.id) { movie in
-                        VStack {
-                            
-                            Image(systemName: "film")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 100, height: 150)
-                                .background(Color.gray.opacity(0.2))
-                                .cornerRadius(8)
-                            Text(movie.title)
-                                .font(.caption)
-                                .lineLimit(1)
-                            Text(movie.releaseDate)
-                                .font(.caption2)
-                                .foregroundColor(.secondary)
+                        
+                        NavigationLink(destination: MovieDetailView(movie: movie)) { //指定進入cell的詳細view裡面
+                            VStack {
+                                let imageTransURL = "https://image.tmdb.org/t/p/w500" + movie.posterPath
+                                
+                                KFImage(URL(string: imageTransURL))
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 100, height: 150)
+                                    .background(Color.gray.opacity(0.2))
+                                    .cornerRadius(8)
+                                
+                                Text(movie.title)
+                                    .font(.caption)
+                                    .lineLimit(1)
+                            }
+                            .padding(.vertical)
                         }
-                        .padding(.vertical)
                     }
                 }
                 .padding(.horizontal)
