@@ -8,10 +8,6 @@ struct TabBarView: View {
     
     @State var selectedTab = 0
     
-
-    
-    
-
 var body: some View {
            TabView(selection: $selectedTab) {
                
@@ -28,7 +24,6 @@ var body: some View {
        .accentColor(.white) // 设置选中标签的颜色
        .background(Color.black.ignoresSafeArea(edges: .bottom)) // 设置TabBar背景颜色
    }
-
 }
 
 
@@ -36,7 +31,6 @@ var body: some View {
 #Preview {
     TabBarView()
 }
-
 
 //#Preview("ContentView (Landscape)", traits: .landscapeLeft) {
 //    TabBarView()
