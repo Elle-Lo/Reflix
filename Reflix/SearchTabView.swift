@@ -16,7 +16,7 @@ struct MovieSearchResponse: Codable {
 // 独立的电影列表项目视图
 struct MovieListItemView: View {
     let movie: MovieSearchResult
-    let onTapped: () -> Void
+//    let onTapped: () -> Void
     
     var body: some View {
         
@@ -49,9 +49,6 @@ struct MovieListItemView: View {
                         Spacer()
                     }
                     .contentShape(Rectangle())
-                .simultaneousGesture(TapGesture().onEnded {
-                    onTapped()
-                })
             }
         }
         
@@ -130,34 +127,52 @@ struct SearchTabView: View {
                         .padding(.horizontal, 16)
                         .padding(.top, 8)
                     }
-                    
-                    List {
-                        if searchText.isEmpty {
-                            // 显示搜索记录
-                            ForEach(searchHistory, id: \.self) { record in
-                                HStack {
-                                    Image(systemName: "magnifyingglass")
-                                        .foregroundColor(.gray)
-                                    Text(record)
-                                        .foregroundColor(.white)
-                                }
-                                .onTapGesture {
-                                    searchText = record
-                                    searchMovies(query: record)
-                                }
-                            }
-                        } else {
-                            // 显示搜索结果
-                            ForEach(searchResults) { movie in
-                                NavigationLink(destination: MovieDetailView(movie: movie)) {
-                                    MovieListItemView(movie: movie) {
-                                        addToSearchHistory(query: movie.title ?? "")
+                
+                List {
+                    if searchText.isEmpty {
+                        ForEach(searchHistory, id: \.self) { record in
+                            HStack {
+                                Image(systemName: "magnifyingglass")
+                                    .foregroundColor(.gray)
+                                    .font(.system(size: 15))
+                                
+                                Text(record)
+                                    .foregroundColor(.white)
+                                
+                                Spacer()
+                                
+                                Button(action: {
+                                    if let index = searchHistory.firstIndex(of: record) {
+                                        searchHistory.remove(at: index)
                                     }
+                                }) {
+                                    Image(systemName: "xmark")
+                                        .foregroundColor(.gray)
+                                        .font(.system(size: 10))
                                 }
+                                .buttonStyle(BorderlessButtonStyle())
+                            }
+                            .listRowBackground(Color.clear)
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                searchText = record
+                                searchMovies(query: record)
+                                isSearchFieldFocused = false
                             }
                         }
+                    } else {
+                            // 显示搜索结果
+                        ForEach(searchResults) { movie in
+                            NavigationLink(destination: MovieDetailView2(movie: movie)
+                                .onDisappear {
+                                    addToSearchHistory(query: movie.title ?? "")
+                                }) {
+                                    MovieListItemView(movie: movie)
+                                }
+                        }
                     }
-                    .listStyle(PlainListStyle())
+                }
+                .listStyle(PlainListStyle())
             }
             .onChange(of: searchText) { newValue in
                 if newValue.isEmpty {
