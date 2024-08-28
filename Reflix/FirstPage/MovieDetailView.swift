@@ -8,6 +8,7 @@
 //
 import SwiftUI
 import Kingfisher
+import YouTubePlayerKit
 
 struct VideoResponse: Codable {
     let id: Int
@@ -42,8 +43,8 @@ struct MovieDetailView: View {
     @State var ytKey: String = ""
     @State private var isShowingFullScreen = false
     @State private var isLandscape = false
-    
-    
+    @State private var showVideo = false
+    @State private var showVideoDetail = false
     
     var body: some View {
    
@@ -77,14 +78,55 @@ struct MovieDetailView: View {
 //                        ExtractedView(text: "播放預告片")
 //                    })
                     
-                    Button(action: {
-                        isShowingFullScreen = true
-                    }, label: {
-                        ExtractedView(text: "播放預告片")
-                    })
-                    .fullScreenCover(isPresented: $isShowingFullScreen, content: {
-                        YouTubePlayerFullScreenView(videoID: ytKey)
-                    })
+                    //
+//                    Button(action: {
+//                        isShowingFullScreen = true
+//                    }, label: {
+//                        ExtractedView(text: "播放預告片")
+//                    })
+//                    .fullScreenCover(isPresented: $isShowingFullScreen, content: {
+//                        YouTubePlayerFullScreenView(videoID: ytKey)
+//                    })
+                    
+                    //以present的方式將影片叫出來
+//                    Button(action: {
+//                        playVideoAndRotate()
+//                    }) {
+//                        Text("播放預告片")
+//                            .font(.title)
+//                            .padding()
+//                            .background(Color.red)
+//                            .foregroundColor(.white)
+//                            .cornerRadius(10)
+//                            .frame(width: 200,height: 50)
+//                    }
+                    
+//                    if showVideo {
+//                        YouTubeDetailView(videoID: ytKey, isPresented: $showVideo)
+//                    } else {
+//
+//                        
+//                        Button(action: {
+//                            showVideo = true
+//                        }) {
+//                            Text("播放預告片")
+//                                .padding()
+//                                .background(Color.blue)
+//                                .foregroundColor(.white)
+//                                .cornerRadius(10)
+//                        }
+//                    }
+                    NavigationLink(destination: YouTubeDetailView(videoID: ytKey)) {
+                        Text("播放預告片")
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+                    
+                   
+                    
+                    
                     
                     
                     
@@ -94,6 +136,9 @@ struct MovieDetailView: View {
                         .foregroundColor(.gray)
                 }
             }
+            
+            
+            
         }
         .onAppear() {  //進入此cell 再去打一支拿youtube的預告片網址
             print("movie: \(movie.title) , movid : \(movie.id)")
@@ -118,6 +163,31 @@ struct MovieDetailView: View {
             }
         })
     }
+    
+    
+    //present 的形式
+    func playVideoAndRotate() {
+        if let rootVC = UIApplication.shared.windows.first?.rootViewController {
+            // 設置畫面方向為橫向
+            let value = UIInterfaceOrientation.landscapeRight.rawValue
+            UIDevice.current.setValue(value, forKey: "orientation")
+            
+            var url = "https://www.youtube.com/watch?v=\(ytKey)"
+            // 創建 YouTubePlayerViewController 並播放影片
+            let playerViewController = YouTubePlayerViewController(
+                source: .url(url)
+            )
+            rootVC.present(playerViewController, animated: true, completion: {
+                playerViewController.player.play()
+            })
+        }
+    }
+    
+    
+    
+    
+    
+    
     
      func fetch(movieID: String) {  //用先前拿到的id去抓取Yt的專屬id 並轉成可以用的網址
         let apiKey = "80e52b179a4a514f5cb0be8da6d5cc4b"
