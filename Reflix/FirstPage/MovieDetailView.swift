@@ -42,8 +42,8 @@ struct MovieDetailView: View {
     @State var ytKey: String = ""
     @State private var isShowingFullScreen = false
     @State private var isLandscape = false
-    
-    
+    @State private var showVideo = false
+    @State private var showVideoDetail = false
     
     var body: some View {
    
@@ -77,14 +77,22 @@ struct MovieDetailView: View {
 //                        ExtractedView(text: "播放預告片")
 //                    })
                     
-                    Button(action: {
-                        isShowingFullScreen = true
-                    }, label: {
-                        ExtractedView(text: "播放預告片")
-                    })
-                    .fullScreenCover(isPresented: $isShowingFullScreen, content: {
-                        YouTubePlayerFullScreenView(videoID: ytKey)
-                    })
+//                    Button(action: {
+//                        isShowingFullScreen = true
+//                    }, label: {
+//                        ExtractedView(text: "播放預告片")
+//                    })
+//                    .fullScreenCover(isPresented: $isShowingFullScreen, content: {
+//                        YouTubePlayerFullScreenView(videoID: ytKey)
+//                    })
+                    NavigationLink(destination: YouTubeDetailView(videoID: ytKey)) {
+                        Text("播放預告片")
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+                    
                     
                     
                     
