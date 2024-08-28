@@ -16,6 +16,8 @@
 		ABA68F982C7A51F8000CCF90 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA68F972C7A51F8000CCF90 /* MovieDetailView.swift */; };
 		ABA68F9B2C7C61E8000CCF90 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = ABA68F9A2C7C61E8000CCF90 /* Kingfisher */; };
 		ABA68FA22C7F07D1000CCF90 /* DetailView Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA68FA12C7F07D1000CCF90 /* DetailView Model.swift */; };
+		D492935A2C7F16FA005D4DB8 /* YouTubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49293592C7F16FA005D4DB8 /* YouTubeView.swift */; };
+		D492935C2C7F1726005D4DB8 /* YouTubeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D492935B2C7F1726005D4DB8 /* YouTubeDetailView.swift */; };
 		D4B401022C7A188C009842BD /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B401012C7A188C009842BD /* MovieData.swift */; };
 		D4B401042C7A18C4009842BD /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B401032C7A18C4009842BD /* CollectionViewCell.swift */; };
 		D4B401072C7A1D7E009842BD /* MoviePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA68F932C788B13000CCF90 /* MoviePage.swift */; };
@@ -35,6 +37,8 @@
 		ABA68F952C788B3B000CCF90 /* SearchTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabView.swift; sourceTree = "<group>"; };
 		ABA68F972C7A51F8000CCF90 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		ABA68FA12C7F07D1000CCF90 /* DetailView Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailView Model.swift"; sourceTree = "<group>"; };
+		D49293592C7F16FA005D4DB8 /* YouTubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeView.swift; sourceTree = "<group>"; };
+		D492935B2C7F1726005D4DB8 /* YouTubeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeDetailView.swift; sourceTree = "<group>"; };
 		D4B401012C7A188C009842BD /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
 		D4B401032C7A18C4009842BD /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		D4FFBCF52C7DAF5F00180BED /* MovieDetailView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView2.swift; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 				ABA68F852C782373000CCF90 /* ContentView.swift */,
 				ABA68F912C7860D3000CCF90 /* TabView.swift */,
 				D4FFBCF72C7DAFCE00180BED /* YouTubePlayerFullScreenView.swift */,
+				D49293592C7F16FA005D4DB8 /* YouTubeView.swift */,
+				D492935B2C7F1726005D4DB8 /* YouTubeDetailView.swift */,
 				ABA68F952C788B3B000CCF90 /* SearchTabView.swift */,
 				D4FFBCF52C7DAF5F00180BED /* MovieDetailView2.swift */,
 				ABA68FA12C7F07D1000CCF90 /* DetailView Model.swift */,
@@ -185,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4FFBCF82C7DAFCE00180BED /* YouTubePlayerFullScreenView.swift in Sources */,
+				D492935C2C7F1726005D4DB8 /* YouTubeDetailView.swift in Sources */,
 				D4FFBCF62C7DAF5F00180BED /* MovieDetailView2.swift in Sources */,
 				D4B401022C7A188C009842BD /* MovieData.swift in Sources */,
 				ABA68F862C782373000CCF90 /* ContentView.swift in Sources */,
@@ -192,6 +199,7 @@
 				D4B401042C7A18C4009842BD /* CollectionViewCell.swift in Sources */,
 				ABA68F842C782373000CCF90 /* ReflixApp.swift in Sources */,
 				ABA68FA22C7F07D1000CCF90 /* DetailView Model.swift in Sources */,
+				D492935A2C7F16FA005D4DB8 /* YouTubeView.swift in Sources */,
 				D4B401072C7A1D7E009842BD /* MoviePage.swift in Sources */,
 				ABA68F982C7A51F8000CCF90 /* MovieDetailView.swift in Sources */,
 				ABA68F962C788B3B000CCF90 /* SearchTabView.swift in Sources */,
@@ -341,7 +349,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ellelo.Reflix;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ellelo.Reflix1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -370,7 +378,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ellelo.Reflix;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ellelo.Reflix1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
