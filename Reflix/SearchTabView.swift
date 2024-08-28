@@ -16,42 +16,42 @@ struct MovieSearchResponse: Codable {
 // 独立的电影列表项目视图
 struct MovieListItemView: View {
     let movie: MovieSearchResult
-//    let onTapped: () -> Void
+    //    let onTapped: () -> Void
     
     var body: some View {
         
-                    HStack {
-                        if let posterPath = movie.poster_path {
-                            let posterURL = URL(string: "https://image.tmdb.org/t/p/w200\(posterPath)")
-                            KFImage(posterURL) // 使用 Kingfisher 加载图片
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 50, height: 75)
-                                .cornerRadius(8)
-                        } else {
-                            Color.gray
-                                .frame(width: 50, height: 75)
-                                .cornerRadius(8)
-                        }
-                        
-                        VStack(alignment: .leading) {
-                            Text(movie.title)
-                                .foregroundColor(.white)
-                                .font(.headline)
-                            
-                            if let releaseDate = movie.release_date {
-                                Text("Release Date: \(releaseDate)")
-                                    .font(.subheadline)
-                                    .foregroundColor(.gray)
-                            }
-                        }
-                        
-                        Spacer()
-                    }
-                    .contentShape(Rectangle())
+        HStack {
+            if let posterPath = movie.poster_path {
+                let posterURL = URL(string: "https://image.tmdb.org/t/p/w200\(posterPath)")
+                KFImage(posterURL) // 使用 Kingfisher 加载图片
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 75)
+                    .cornerRadius(8)
+            } else {
+                Color.gray
+                    .frame(width: 50, height: 75)
+                    .cornerRadius(8)
             }
+            
+            VStack(alignment: .leading) {
+                Text(movie.title)
+                    .foregroundColor(.white)
+                    .font(.headline)
+                
+                if let releaseDate = movie.release_date {
+                    Text("Release Date: \(releaseDate)")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
+            }
+            
+            Spacer()
         }
-        
+        .contentShape(Rectangle())
+    }
+}
+
 
 struct SearchTabView: View {
     @State private var searchText = ""
@@ -62,71 +62,71 @@ struct SearchTabView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
-                            
-                            // 搜索标题
-                            Text("搜尋")
-                                .font(.custom("PingFang TC", size: 30))
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 16)
-                                .padding(.top, 8)
-                            
-                            // 搜索框
-                            HStack {
-                                Image(systemName: "magnifyingglass")
-                                    .foregroundColor(.gray)
-                                
-                                TextField("Search", text: $searchText)
-                                    .focused($isSearchFieldFocused)
-                                    .padding(8)
-                                    .onSubmit {
-                                        addToSearchHistory(query: searchText)
-                                        searchMovies(query: searchText)
-                                    }
-                                
-                                if !searchText.isEmpty {
-                                    Button(action: {
-                                        searchText = ""
-                                        searchResults = []
-                                    }) {
-                                        Image(systemName: "xmark.circle.fill")
-                                            .foregroundColor(.gray)
-                                    }
-                                }
-                            }
-                            .padding(.horizontal, 16)
-                            .background(Color(.systemGray5))
-                            .cornerRadius(8)
-                            .padding(.horizontal, 16)
-                            .padding(.top, 0)
-                            .padding(.bottom, 15)
+                
+                // 搜索标题
+                Text("搜尋")
+                    .font(.custom("PingFang TC", size: 30))
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 16)
+                    .padding(.top, 8)
+                
+                // 搜索框
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(.gray)
                     
-                    if searchText.isEmpty && !searchHistory.isEmpty {
-                        HStack {
-                            Text("搜尋紀錄")
-                                .font(.custom("PingFang TC", size: 18))
-                                .foregroundColor(.gray)
-                            
-                            Spacer()
-                            
-                            Button(action: {
-                                searchHistory.removeAll()
-                            }) {
-                                Text("清除")
-                                    .font(.subheadline)
-                                    .padding(.horizontal, 10)
-                                    .padding(.vertical, 4)
-                                    .background(
-                                        ZStack {
-                                            Capsule(style: .circular)
-                                                .stroke(lineWidth: 1.0)
-                                        }
-                                    )
-                            }
-                            .foregroundColor(.gray)
+                    TextField("Search", text: $searchText)
+                        .focused($isSearchFieldFocused)
+                        .padding(8)
+                        .onSubmit {
+                            addToSearchHistory(query: searchText)
+                            searchMovies(query: searchText)
                         }
-                        .padding(.horizontal, 16)
-                        .padding(.top, 8)
+                    
+                    if !searchText.isEmpty {
+                        Button(action: {
+                            searchText = ""
+                            searchResults = []
+                        }) {
+                            Image(systemName: "xmark.circle.fill")
+                                .foregroundColor(.gray)
+                        }
                     }
+                }
+                .padding(.horizontal, 16)
+                .background(Color(.systemGray5))
+                .cornerRadius(8)
+                .padding(.horizontal, 16)
+                .padding(.top, 0)
+                .padding(.bottom, 15)
+                
+                if searchText.isEmpty && !searchHistory.isEmpty {
+                    HStack {
+                        Text("搜尋紀錄")
+                            .font(.custom("PingFang TC", size: 18))
+                            .foregroundColor(.gray)
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            searchHistory.removeAll()
+                        }) {
+                            Text("清除")
+                                .font(.subheadline)
+                                .padding(.horizontal, 10)
+                                .padding(.vertical, 4)
+                                .background(
+                                    ZStack {
+                                        Capsule(style: .circular)
+                                            .stroke(lineWidth: 1.0)
+                                    }
+                                )
+                        }
+                        .foregroundColor(.gray)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.top, 8)
+                }
                 
                 List {
                     if searchText.isEmpty {
@@ -161,7 +161,7 @@ struct SearchTabView: View {
                             }
                         }
                     } else {
-                            // 显示搜索结果
+                        // 显示搜索结果
                         ForEach(searchResults) { movie in
                             NavigationLink(destination: MovieDetailView2(movie: movie)
                                 .onDisappear {
@@ -176,23 +176,23 @@ struct SearchTabView: View {
             }
             .onChange(of: searchText) { newValue in
                 if newValue.isEmpty {
-                                searchResults = []
-                            } else {
-                                searchMovies(query: newValue) // 实时搜索电影
-                            }
-                        }
-//                .navigationTitle("Search")
+                    searchResults = []
+                } else {
+                    searchMovies(query: newValue) // 实时搜索电影
+                }
             }
+            //                .navigationTitle("Search")
         }
+    }
     
     private func addToSearchHistory(query: String) {
-            guard !query.isEmpty else { return }
-            
-            if !searchHistory.contains(query) {
-                searchHistory.insert(query, at: 0)
-            }
-//        print("Query added to history: \(query)")
+        guard !query.isEmpty else { return }
+        
+        if !searchHistory.contains(query) {
+            searchHistory.insert(query, at: 0)
         }
+        //        print("Query added to history: \(query)")
+    }
     
     private func searchMovies(query: String) {
         guard !query.isEmpty else {
@@ -200,35 +200,35 @@ struct SearchTabView: View {
             return
         }
         
-       
+        
         
         let apiKey = "80e52b179a4a514f5cb0be8da6d5cc4b"
         let query = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         let urlString = "https://api.themoviedb.org/3/search/movie?api_key=\(apiKey)&language=zh-TW&query=\(query)&page=1"
-
+        
         guard let url = URL(string: urlString) else {
             print("無效的 URL")
             return
         }
-
+        
         let urlRequest = URLRequest(url: url)
-
+        
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
                 print("錯誤: \(error.localizedDescription)")
                 return
             }
-
+            
             guard let data = data else {
                 print("無資料")
                 return
             }
-
+            
             do {
                 let decoder = JSONDecoder()
                 let searchResponse = try decoder.decode(MovieSearchResponse.self, from: data)
-                    self.searchResults = searchResponse.results
-
+                self.searchResults = searchResponse.results
+                
             } catch {
                 print("JSON 解析错误: \(error.localizedDescription)")
             }
