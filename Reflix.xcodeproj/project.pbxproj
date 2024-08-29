@@ -20,9 +20,8 @@
 		D492935C2C7F1726005D4DB8 /* YouTubeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D492935B2C7F1726005D4DB8 /* YouTubeDetailView.swift */; };
 		D4B401022C7A188C009842BD /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B401012C7A188C009842BD /* MovieData.swift */; };
 		D4B401042C7A18C4009842BD /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B401032C7A18C4009842BD /* CollectionViewCell.swift */; };
-		D4B401072C7A1D7E009842BD /* MoviePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA68F932C788B13000CCF90 /* MoviePage.swift */; };
+		D4B401072C7A1D7E009842BD /* MovieTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA68F932C788B13000CCF90 /* MovieTabView.swift */; };
 		D4FFBCF62C7DAF5F00180BED /* MovieDetailView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FFBCF52C7DAF5F00180BED /* MovieDetailView2.swift */; };
-		D4FFBCF82C7DAFCE00180BED /* YouTubePlayerFullScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FFBCF72C7DAFCE00180BED /* YouTubePlayerFullScreenView.swift */; };
 		D4FFBCFB2C7DB01600180BED /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = D4FFBCFA2C7DB01600180BED /* YouTubePlayerKit */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +32,7 @@
 		ABA68F872C782374000CCF90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABA68F8A2C782374000CCF90 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ABA68F912C7860D3000CCF90 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
-		ABA68F932C788B13000CCF90 /* MoviePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePage.swift; sourceTree = "<group>"; };
+		ABA68F932C788B13000CCF90 /* MovieTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTabView.swift; sourceTree = "<group>"; };
 		ABA68F952C788B3B000CCF90 /* SearchTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabView.swift; sourceTree = "<group>"; };
 		ABA68F972C7A51F8000CCF90 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		ABA68FA12C7F07D1000CCF90 /* DetailView Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailView Model.swift"; sourceTree = "<group>"; };
@@ -42,7 +41,6 @@
 		D4B401012C7A188C009842BD /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
 		D4B401032C7A18C4009842BD /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		D4FFBCF52C7DAF5F00180BED /* MovieDetailView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView2.swift; sourceTree = "<group>"; };
-		D4FFBCF72C7DAFCE00180BED /* YouTubePlayerFullScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubePlayerFullScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,15 +75,12 @@
 		ABA68F822C782373000CCF90 /* Reflix */ = {
 			isa = PBXGroup;
 			children = (
-				D4B401052C7A196F009842BD /* FirstPage */,
-				ABA68F852C782373000CCF90 /* ContentView.swift */,
+				D43C1C402C7F846E005021BA /* Player */,
+				D43C1C3F2C7F843F005021BA /* Model */,
+				D4B401052C7A196F009842BD /* MoviePage */,
+				D43C1C412C7F84B3005021BA /* SearchPage */,
 				ABA68F912C7860D3000CCF90 /* TabView.swift */,
-				D4FFBCF72C7DAFCE00180BED /* YouTubePlayerFullScreenView.swift */,
-				D49293592C7F16FA005D4DB8 /* YouTubeView.swift */,
-				D492935B2C7F1726005D4DB8 /* YouTubeDetailView.swift */,
-				ABA68F952C788B3B000CCF90 /* SearchTabView.swift */,
-				D4FFBCF52C7DAF5F00180BED /* MovieDetailView2.swift */,
-				ABA68FA12C7F07D1000CCF90 /* DetailView Model.swift */,
+				ABA68F852C782373000CCF90 /* ContentView.swift */,
 				ABA68F832C782373000CCF90 /* ReflixApp.swift */,
 				ABA68F872C782374000CCF90 /* Assets.xcassets */,
 				ABA68F892C782374000CCF90 /* Preview Content */,
@@ -101,15 +96,41 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		D4B401052C7A196F009842BD /* FirstPage */ = {
+		D43C1C3F2C7F843F005021BA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				ABA68F932C788B13000CCF90 /* MoviePage.swift */,
+				ABA68FA12C7F07D1000CCF90 /* DetailView Model.swift */,
 				D4B401012C7A188C009842BD /* MovieData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D43C1C402C7F846E005021BA /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				D49293592C7F16FA005D4DB8 /* YouTubeView.swift */,
+				D492935B2C7F1726005D4DB8 /* YouTubeDetailView.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		D43C1C412C7F84B3005021BA /* SearchPage */ = {
+			isa = PBXGroup;
+			children = (
+				ABA68F952C788B3B000CCF90 /* SearchTabView.swift */,
+				D4FFBCF52C7DAF5F00180BED /* MovieDetailView2.swift */,
+			);
+			path = SearchPage;
+			sourceTree = "<group>";
+		};
+		D4B401052C7A196F009842BD /* MoviePage */ = {
+			isa = PBXGroup;
+			children = (
+				ABA68F932C788B13000CCF90 /* MovieTabView.swift */,
 				D4B401032C7A18C4009842BD /* CollectionViewCell.swift */,
 				ABA68F972C7A51F8000CCF90 /* MovieDetailView.swift */,
 			);
-			path = FirstPage;
+			path = MoviePage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,7 +211,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4FFBCF82C7DAFCE00180BED /* YouTubePlayerFullScreenView.swift in Sources */,
 				D492935C2C7F1726005D4DB8 /* YouTubeDetailView.swift in Sources */,
 				D4FFBCF62C7DAF5F00180BED /* MovieDetailView2.swift in Sources */,
 				D4B401022C7A188C009842BD /* MovieData.swift in Sources */,
@@ -200,7 +220,7 @@
 				ABA68F842C782373000CCF90 /* ReflixApp.swift in Sources */,
 				ABA68FA22C7F07D1000CCF90 /* DetailView Model.swift in Sources */,
 				D492935A2C7F16FA005D4DB8 /* YouTubeView.swift in Sources */,
-				D4B401072C7A1D7E009842BD /* MoviePage.swift in Sources */,
+				D4B401072C7A1D7E009842BD /* MovieTabView.swift in Sources */,
 				ABA68F982C7A51F8000CCF90 /* MovieDetailView.swift in Sources */,
 				ABA68F962C788B3B000CCF90 /* SearchTabView.swift in Sources */,
 			);

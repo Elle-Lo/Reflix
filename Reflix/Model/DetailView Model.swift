@@ -1,7 +1,7 @@
 import SwiftUI
 import Foundation
 
-// 定义电影搜索结果的数据结构
+// 電影搜尋結果數據結構
 struct MovieSearchResult: Identifiable, Codable, Hashable {
     let id: Int
     let title: String
@@ -22,7 +22,7 @@ struct CastMember: Codable, Identifiable {
     let profile_path: String?
     let original_name: String
 }
-    
+
 struct MovieCreditsResponse: Codable {
     let cast: [CastMember]
 }
@@ -86,5 +86,4 @@ let genreMapping: [String: String] = [
     "惊悚": "驚悚",
     "战争": "戰爭",
     "西部": "西部"
-       
-    ]
+]

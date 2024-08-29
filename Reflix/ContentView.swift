@@ -3,10 +3,8 @@ import SwiftUI
 struct ContentView: View {
     
     init() {
-        // 設定為dark mode
         UIView.appearance().overrideUserInterfaceStyle = .dark
     }
-    
     
     var body: some View {
         TabBarView()
@@ -17,7 +15,4 @@ struct ContentView: View {
     ContentView()
 }
 
-//#Preview("ContentView (Landscape)", traits: .landscapeLeft) {
-//ContentView()
-//}
 
