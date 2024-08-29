@@ -1,15 +1,13 @@
 import SwiftUI
 import Kingfisher
-import AVKit
 
-struct MovieDetailView2: View {
+
+struct MovieDetailView: View {
     let movieID: Int
     @State private var movieDetail: MovieDetail?
     @State private var movieImages: [String] = []
     @State private var youtubeVideoID: String?
     @State private var castMembers: [CastMember] = []
-    
-    private let apiKey = "80e52b179a4a514f5cb0be8da6d5cc4b"
     
     var body: some View {
         ScrollView {
@@ -26,7 +24,7 @@ struct MovieDetailView2: View {
                         .padding(.leading)
                     
                     HStack {
-                        if let releaseDate = movieDetail.release_date {
+                        if let releaseDate = movieDetail.releaseDate {
                             let year = String(releaseDate.prefix(4))
                             Text("\(year)")
                         }
@@ -48,7 +46,7 @@ struct MovieDetailView2: View {
                     .foregroundColor(.gray)
                     .padding(.horizontal)
                     
-                    if let voteAverage = movieDetail.vote_average {
+                    if let voteAverage = movieDetail.voteAverage {
                         HStack {
                             Image(systemName: "star.fill")
                                 .foregroundColor(.yellow)
@@ -59,15 +57,12 @@ struct MovieDetailView2: View {
                         .padding(.top, 2)
                     }
                     
-                    
                     if let youtubeVideoID = youtubeVideoID {
-                        
                         NavigationLink(destination: YouTubeDetailView(videoID: youtubeVideoID)) {
                             HStack {
                                 Image(systemName: "play.fill")
                                     .foregroundColor(.reflixBlack)
                                     .font(.system(size: 14))
-                                
                                 
                                 Text("播放預告片")
                                     .foregroundColor(.reflixBlack)
@@ -92,7 +87,7 @@ struct MovieDetailView2: View {
                         HStack(spacing: 5) {
                             ForEach(castMembers) { cast in
                                 VStack {
-                                    if let profilePath = cast.profile_path {
+                                    if let profilePath = cast.profilePath {
                                         KFImage(URL(string: "https://image.tmdb.org/t/p/w200\(profilePath)"))
                                             .resizable()
                                             .scaledToFill()
@@ -104,7 +99,7 @@ struct MovieDetailView2: View {
                                             .cornerRadius(8)
                                     }
                                     
-                                    Text(cast.original_name)
+                                    Text(cast.originalName)
                                         .font(.caption2)
                                         .lineLimit(1)
                                 }
@@ -151,7 +146,7 @@ struct MovieDetailView2: View {
     }
     
     private func loadMovieDetail() {
-        fetchData(endpoint: "/movie/\(movieID)?api_key=\(apiKey)&language=zh-TW") { (result: Swift.Result<MovieDetail, Error>) in
+        TMDBAPI.fetchMovieDetails(movieID: movieID) { result in
             switch result {
             case .success(let movieDetail):
                 self.movieDetail = movieDetail
@@ -164,7 +159,7 @@ struct MovieDetailView2: View {
     }
     
     private func loadMovieCredits() {
-        fetchData(endpoint: "/movie/\(movieID)/credits?api_key=\(apiKey)&language=zh-TW") { (result: Swift.Result<MovieCreditsResponse, Error>) in
+        TMDBAPI.fetchMovieCredits(movieID: movieID) { result in
             switch result {
             case .success(let creditsResponse):
                 self.castMembers = creditsResponse.cast
@@ -175,10 +170,10 @@ struct MovieDetailView2: View {
     }
     
     private func loadMovieImages() {
-        fetchData(endpoint: "/movie/\(movieID)/images?api_key=\(apiKey)") { (result: Swift.Result<MovieImagesResponse, Error>) in
+        TMDBAPI.fetchMovieImages(movieID: movieID) { result in
             switch result {
             case .success(let imagesResponse):
-                self.movieImages = imagesResponse.backdrops.map { $0.file_path }
+                self.movieImages = imagesResponse.backdrops.map { $0.filePath }
             case .failure(let error):
                 print("電影劇照資訊錯誤: \(error)")
             }
@@ -186,7 +181,7 @@ struct MovieDetailView2: View {
     }
     
     private func loadMovieTrailer() {
-        fetchData(endpoint: "/movie/\(movieID)/videos?api_key=\(apiKey)&language=zh-TW") { (result: Swift.Result<MovieVideosResponse, Error>) in
+        TMDBAPI.fetchMovieVideos(movieID: movieID) { result in
             switch result {
             case .success(let videoResponse):
                 if let youtubeVideo = videoResponse.results.first(where: { $0.site == "YouTube" && $0.type == "Trailer" }) {
@@ -196,36 +191,6 @@ struct MovieDetailView2: View {
                 print("讀取預告片錯誤: \(error)")
             }
         }
-    }
-    
-    private func fetchData<T: Decodable>(endpoint: String, completion: @escaping (Swift.Result<T, Error>) -> Void) {
-        let baseUrl = "https://api.themoviedb.org/3"
-        guard let url = URL(string: baseUrl + endpoint) else {
-            completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                completion(.failure(error))
-                return
-            }
-            
-            guard let data = data else {
-                completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                let decodedData = try decoder.decode(T.self, from: data)
-                DispatchQueue.main.async {
-                    completion(.success(decodedData))
-                }
-            } catch {
-                completion(.failure(error))
-            }
-        }.resume()
     }
     
     struct CarouselView: View {
@@ -260,5 +225,5 @@ struct MovieDetailView2: View {
 }
 
 #Preview {
-    MovieDetailView2(movieID: 550)
+    MovieDetailView(movieID: 550)
 }

@@ -1,46 +1,9 @@
 import SwiftUI
 import Kingfisher
 
-struct MovieListItemView: View {
-    let movie: MovieSearchResult
-    
-    var body: some View {
-        
-        HStack {
-            if let posterPath = movie.poster_path {
-                let posterURL = URL(string: "https://image.tmdb.org/t/p/w200\(posterPath)")
-                KFImage(posterURL)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50, height: 75)
-                    .cornerRadius(8)
-            } else {
-                Color.gray
-                    .frame(width: 50, height: 75)
-                    .cornerRadius(8)
-            }
-            
-            VStack(alignment: .leading) {
-                Text(movie.title)
-                    .foregroundColor(.white)
-                    .font(.headline)
-                
-                if let releaseDate = movie.release_date {
-                    Text("Release Date: \(releaseDate)")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                }
-            }
-            
-            Spacer()
-        }
-        .contentShape(Rectangle())
-    }
-}
-
 struct SearchTabView: View {
     @State private var searchText = ""
-    @State private var searchResults: [MovieSearchResult] = []
+    @State private var searchResults: [MovieBasicInfo] = []
     @State private var searchHistory: [String] = []
     @FocusState private var isSearchFieldFocused: Bool
     
@@ -80,7 +43,6 @@ struct SearchTabView: View {
                 .background(Color(.systemGray5))
                 .cornerRadius(8)
                 .padding(.horizontal, 16)
-                .padding(.top, 0)
                 .padding(.bottom, 15)
                 
                 if searchText.isEmpty && !searchHistory.isEmpty {
@@ -145,7 +107,7 @@ struct SearchTabView: View {
                         }
                     } else {
                         ForEach(searchResults) { movie in
-                            NavigationLink(destination: MovieDetailView2(movieID: movie.id)
+                            NavigationLink(destination: MovieDetailView(movieID: movie.id)
                                 .onDisappear {
                                     addToSearchHistory(query: movie.title)
                                 }) {
@@ -175,44 +137,16 @@ struct SearchTabView: View {
     }
     
     private func searchMovies(query: String) {
-        guard !query.isEmpty else {
-            self.searchResults = []
-            return
-        }
-        
-        let apiKey = "80e52b179a4a514f5cb0be8da6d5cc4b"
-        let query = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        let urlString = "https://api.themoviedb.org/3/search/movie?api_key=\(apiKey)&language=zh-TW&query=\(query)&page=1"
-        
-        guard let url = URL(string: urlString) else {
-            print("無效的 URL")
-            return
-        }
-        
-        let urlRequest = URLRequest(url: url)
-        
-        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            if let error = error {
-                print("錯誤: \(error.localizedDescription)")
-                return
-            }
-            
-            guard let data = data else {
-                print("無資料")
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                let searchResponse = try decoder.decode(MovieSearchResponse.self, from: data)
-                self.searchResults = searchResponse.results
-                
-            } catch {
-                print("JSON 解析错误: \(error.localizedDescription)")
+        TMDBAPI.searchMovies(query: query) { result in
+            switch result {
+            case .success(let movies):
+                DispatchQueue.main.async {
+                    self.searchResults = movies
+                }
+            case .failure(let error):
+                print("Error searching movies: \(error)")
             }
         }
-        
-        task.resume()
     }
 }
 

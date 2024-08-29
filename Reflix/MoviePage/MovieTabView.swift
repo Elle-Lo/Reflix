@@ -2,103 +2,62 @@ import SwiftUI
 
 struct MovieTabView: View {
     
-    @State private var nowPlayingMovies: [Result] = []
-    @State private var upcomingMovies: [Result] = []
+    @State private var nowPlayingMovies: [MovieBasicInfo] = []
+    @State private var upcomingMovies: [MovieBasicInfo] = []
   
     var body: some View {
-
-        NavigationView {
-            List {
-                
-                CollectCell(title: "上映中", movies: nowPlayingMovies)
-                CollectCell(title: "即將上映", movies: upcomingMovies)
-            }
-            .navigationTitle("我的電影")
-            .listStyle(PlainListStyle())
-            
-        }
         
-        .onAppear() {
-            fetchTopMovies(limit: 10)
-            fetchUpComingMovies(limit: 10)
+        VStack(alignment: .leading) {
+            Text("我的電影")
+                .font(.custom("PingFang TC", size: 30))
+                .foregroundColor(.white)
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+            
+            NavigationView {
+                List {
+                    CollectCell(title: "上映中", movies: nowPlayingMovies)
+                    CollectCell(title: "即將上映", movies: upcomingMovies)
+                }
+//                .navigationTitle("我的電影")
+                .listStyle(PlainListStyle())
+            }
+            .onAppear {
+                loadNowPlayingMovies(limit: 10)
+                loadUpcomingMovies(limit: 10)
+            }
         }
     }
     
-    func fetchTopMovies(limit: Int = 10) {
-        let apiKey = "80e52b179a4a514f5cb0be8da6d5cc4b"
-        let urlString = "https://api.themoviedb.org/3/movie/popular?api_key=\(apiKey)&language=zh-TW&page=1"
-
-        guard let url = URL(string: urlString) else {
-            print("無效的 URL")
-            return
-        }
-
-        let urlRequest = URLRequest(url: url)
-        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            if let error = error {
-                print("錯誤: \(error.localizedDescription)")
-                return
-            }
-
-            guard let data = data else {
-                print("無資料")
-                return
-            }
-
-            do {
-                let decoder = JSONDecoder()
-                let movieData = try decoder.decode(MovieData.self, from: data)
-                
+    // MARK: - 加載上映中電影
+    private func loadNowPlayingMovies(limit: Int) {
+        TMDBAPI.fetchNowPlayingMovies(limit: limit) { result in
+            switch result {
+            case .success(let movies):
                 DispatchQueue.main.async {
-                    self.nowPlayingMovies = Array(movieData.results.prefix(limit))
+                    self.nowPlayingMovies = movies
                 }
-            } catch {
-                print("JSON 解析錯誤: \(error.localizedDescription)")
+            case .failure(let error):
+                print("Failed to load now playing movies: \(error.localizedDescription)")
             }
         }
-        task.resume()
     }
     
-    func fetchUpComingMovies(limit: Int = 10) {
-        let apiKey = "80e52b179a4a514f5cb0be8da6d5cc4b"
-        let urlString = "https://api.themoviedb.org/3/movie/upcoming?api_key=\(apiKey)&language=zh-TW&page=1"
-
-        guard let url = URL(string: urlString) else {
-            print("無效的 URL")
-            return
-        }
-
-        let urlRequest = URLRequest(url: url)
-        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            if let error = error {
-                print("錯誤: \(error.localizedDescription)")
-                return
-            }
-
-            guard let data = data else {
-                print("無資料")
-                return
-            }
-
-            do {
-                let decoder = JSONDecoder()
-                let movieData = try decoder.decode(MovieData.self, from: data)
-                
+    // MARK: - 加載即將上映電影
+    private func loadUpcomingMovies(limit: Int) {
+        TMDBAPI.fetchUpcomingMovies(limit: limit) { result in
+            switch result {
+            case .success(let movies):
                 DispatchQueue.main.async {
-                    self.upcomingMovies = Array(movieData.results.prefix(limit)) //
+                    self.upcomingMovies = movies
                 }
-                
-            } catch {
-                print("JSON 解析錯誤: \(error.localizedDescription)")
+            case .failure(let error):
+                print("Failed to load upcoming movies: \(error.localizedDescription)")
             }
         }
-        task.resume()
     }
 }
-
 
 #Preview {
     MovieTabView()
 }
-
-
