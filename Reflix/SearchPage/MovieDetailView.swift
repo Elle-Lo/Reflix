@@ -81,6 +81,7 @@ struct MovieDetailView: View {
                     Text("主要演員")
                         .font(.headline)
                         .padding(.leading)
+                        .padding(.bottom, 0)
                         .padding(.top, 20)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
@@ -95,7 +96,7 @@ struct MovieDetailView: View {
                                             .cornerRadius(8)
                                     } else {
                                         Color.gray
-                                            .frame(width: 100, height: 150)
+                                            .frame(width: 66, height: 100)
                                             .cornerRadius(8)
                                     }
                                     
@@ -103,7 +104,7 @@ struct MovieDetailView: View {
                                         .font(.caption2)
                                         .lineLimit(1)
                                 }
-                                .frame(width: 100)
+                                .frame(width: 85)
                             }
                         }
                         .padding(.horizontal)
@@ -136,7 +137,9 @@ struct MovieDetailView: View {
             }
             .background(Color.black.ignoresSafeArea())
             .foregroundColor(.white)
+           
         }
+        
     }
     
     private func formattedRuntime(_ runtime: Int) -> String {

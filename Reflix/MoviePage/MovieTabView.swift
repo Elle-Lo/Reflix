@@ -7,24 +7,25 @@ struct MovieTabView: View {
   
     var body: some View {
         
-        VStack(alignment: .leading) {
-            Text("我的電影")
-                .font(.custom("PingFang TC", size: 30))
-                .foregroundColor(.white)
-                .padding(.horizontal, 16)
-                .padding(.top, 8)
-            
-            NavigationView {
-                List {
-                    CollectCell(title: "上映中", movies: nowPlayingMovies)
-                    CollectCell(title: "即將上映", movies: upcomingMovies)
+        NavigationStack {
+            VStack(alignment: .leading) {
+                Text("我的電影")
+                    .font(.custom("PingFang TC", size: 30))
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 16)
+                    .padding(.top, 15)
+                
+                NavigationView {
+                    List {
+                        CollectCell(title: "上映中", movies: nowPlayingMovies)
+                        CollectCell(title: "即將上映", movies: upcomingMovies)
+                    }
+                    .listStyle(PlainListStyle())
                 }
-//                .navigationTitle("我的電影")
-                .listStyle(PlainListStyle())
-            }
-            .onAppear {
-                loadNowPlayingMovies(limit: 10)
-                loadUpcomingMovies(limit: 10)
+                .onAppear {
+                    loadNowPlayingMovies(limit: 10)
+                    loadUpcomingMovies(limit: 10)
+                }
             }
         }
     }
