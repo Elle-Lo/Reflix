@@ -118,11 +118,11 @@ struct SearchTabView: View {
                 }
                 .listStyle(PlainListStyle())
             }
-            .onChange(of: searchText) { newValue in
-                if newValue.isEmpty {
+            .onChange(of: searchText) {
+                if searchText.isEmpty {
                     searchResults = []
                 } else {
-                    searchMovies(query: newValue)
+                    searchMovies(query: searchText)
                 }
             }
         }
