@@ -22,6 +22,7 @@
 		D492935C2C7F1726005D4DB8 /* YouTubeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D492935B2C7F1726005D4DB8 /* YouTubeDetailView.swift */; };
 		D4B401042C7A18C4009842BD /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B401032C7A18C4009842BD /* CollectionViewCell.swift */; };
 		D4B401072C7A1D7E009842BD /* MovieTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA68F932C788B13000CCF90 /* MovieTabView.swift */; };
+		D4DFB3722C81BF5C0064B69D /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DFB3712C81BF5C0064B69D /* CategoryView.swift */; };
 		D4FFBCF62C7DAF5F00180BED /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FFBCF52C7DAF5F00180BED /* MovieDetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		D49293592C7F16FA005D4DB8 /* YouTubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeView.swift; sourceTree = "<group>"; };
 		D492935B2C7F1726005D4DB8 /* YouTubeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeDetailView.swift; sourceTree = "<group>"; };
 		D4B401032C7A18C4009842BD /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		D4DFB3712C81BF5C0064B69D /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		D4FFBCF52C7DAF5F00180BED /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 				D43C1C412C7F84B3005021BA /* SearchPage */,
 				ABA68F912C7860D3000CCF90 /* TabView.swift */,
 				D4FFBCF52C7DAF5F00180BED /* MovieDetailView.swift */,
+				D4DFB3712C81BF5C0064B69D /* CategoryView.swift */,
 				AB1C94652C80742F00FAE3E4 /* StateButton.swift */,
 				ABA68F852C782373000CCF90 /* ContentView.swift */,
 				ABA68F832C782373000CCF90 /* ReflixApp.swift */,
@@ -218,6 +221,7 @@
 				ABA68F922C7860D3000CCF90 /* TabView.swift in Sources */,
 				D4B401042C7A18C4009842BD /* CollectionViewCell.swift in Sources */,
 				AB1C945E2C8025E600FAE3E4 /* Model.swift in Sources */,
+				D4DFB3722C81BF5C0064B69D /* CategoryView.swift in Sources */,
 				ABA68F842C782373000CCF90 /* ReflixApp.swift in Sources */,
 				D492935A2C7F16FA005D4DB8 /* YouTubeView.swift in Sources */,
 				AB1C94622C80278C00FAE3E4 /* MovieListItem.swift in Sources */,
@@ -356,7 +360,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Reflix/Preview Content\"";
-				DEVELOPMENT_TEAM = KX36U2DJW6;
+				DEVELOPMENT_TEAM = 38KQRPY27F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -369,7 +373,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ellelo.Reflix-";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ellelo.Reflix-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -385,7 +389,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Reflix/Preview Content\"";
-				DEVELOPMENT_TEAM = KX36U2DJW6;
+				DEVELOPMENT_TEAM = 38KQRPY27F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -398,7 +402,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ellelo.Reflix-";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ellelo.Reflix-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

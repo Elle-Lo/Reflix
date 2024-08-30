@@ -68,6 +68,12 @@ struct Genre: Codable {
     let name: String
 }
 
+struct Genre2: Identifiable {
+    let id: Int
+    let name: String
+}
+
+
 // MARK: - 演員信息結構
 struct CastMember: Codable, Identifiable {
     let id: Int
