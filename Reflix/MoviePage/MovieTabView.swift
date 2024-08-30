@@ -23,8 +23,8 @@ struct MovieTabView: View {
                     .listStyle(PlainListStyle())
                 }
                 .onAppear {
-                    loadNowPlayingMovies(limit: 10)
-                    loadUpcomingMovies(limit: 10)
+                    loadNowPlayingMovies(limit: 50)
+                    loadUpcomingMovies(limit: 50)
                 }
             }
         }
