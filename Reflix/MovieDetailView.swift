@@ -51,16 +51,16 @@ struct MovieDetailView: View {
                             Image(systemName: "star.fill")
                                 .foregroundColor(.yellow)
                             Text(String(format: "%.1f/10", voteAverage))
-                            StateButton()
+                            StateButton(movieID: movieID)
                             Spacer()
                             
-                        
+                            
                         }
                         .font(.subheadline)
                         .padding(.horizontal)
                         .padding(.top, 2)
                     }
-
+                    
                     
                     if let youtubeVideoID = youtubeVideoID {
                         NavigationLink(destination: YouTubeDetailView(videoID: youtubeVideoID)) {
@@ -142,7 +142,7 @@ struct MovieDetailView: View {
             }
             .background(Color.black.ignoresSafeArea())
             .foregroundColor(.white)
-           
+            
         }
         
     }
