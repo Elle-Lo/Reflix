@@ -4,7 +4,7 @@ struct MovieTabView: View {
     
     @State private var nowPlayingMovies: [MovieBasicInfo] = []
     @State private var upcomingMovies: [MovieBasicInfo] = []
-  
+    
     var body: some View {
         
         NavigationStack {
@@ -15,22 +15,21 @@ struct MovieTabView: View {
                     .padding(.horizontal, 16)
                     .padding(.top, 15)
                 
-                NavigationView {
-                    List {
-                        CollectCell(title: "上映中", movies: nowPlayingMovies)
-                        CollectCell(title: "即將上映", movies: upcomingMovies)
-                    }
-                    .listStyle(PlainListStyle())
+                List {
+                    CollectCell(title: "上映中", movies: nowPlayingMovies)
+                    CollectCell(title: "即將上映", movies: upcomingMovies)
                 }
+                .listStyle(PlainListStyle())
                 .onAppear {
                     loadNowPlayingMovies(limit: 50)
                     loadUpcomingMovies(limit: 50)
                 }
+                
             }
         }
+        .scrollIndicators(.hidden)
     }
     
-    // MARK: - 加載上映中電影
     private func loadNowPlayingMovies(limit: Int) {
         TMDBAPI.fetchNowPlayingMovies(limit: limit) { result in
             switch result {
@@ -44,7 +43,6 @@ struct MovieTabView: View {
         }
     }
     
-    // MARK: - 加載即將上映電影
     private func loadUpcomingMovies(limit: Int) {
         TMDBAPI.fetchUpcomingMovies(limit: limit) { result in
             switch result {
