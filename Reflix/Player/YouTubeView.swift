@@ -1,14 +1,6 @@
-//
-//  YouTubeView.swift
-//  Reflix
-//
-//  Created by 池昀哲 on 2024/8/28.
-//
-
 import SwiftUI
 import WebKit
 
-// YouTubeView: 將 YouTube 影片嵌入到 WKWebView 中的 SwiftUI 視圖
 struct YouTubeView: UIViewRepresentable {
     let videoID: String
     
@@ -21,4 +13,3 @@ struct YouTubeView: UIViewRepresentable {
         uiView.load(URLRequest(url: youtubeURL))
     }
 }
-
