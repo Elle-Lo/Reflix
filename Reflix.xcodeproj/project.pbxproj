@@ -84,9 +84,11 @@
 				D4B401052C7A196F009842BD /* MoviePage */,
 				D43C1C412C7F84B3005021BA /* SearchPage */,
 				ABA68F912C7860D3000CCF90 /* TabView.swift */,
+
 				D4FFBCF52C7DAF5F00180BED /* MovieDetailView.swift */,
 				D4DFB3712C81BF5C0064B69D /* CategoryView.swift */,
 				AB1C94652C80742F00FAE3E4 /* StateButton.swift */,
+
 				ABA68F852C782373000CCF90 /* ContentView.swift */,
 				ABA68F832C782373000CCF90 /* ReflixApp.swift */,
 				ABA68F872C782374000CCF90 /* Assets.xcassets */,
@@ -127,6 +129,8 @@
 			children = (
 				ABA68F952C788B3B000CCF90 /* SearchTabView.swift */,
 				AB1C94612C80278C00FAE3E4 /* MovieListItem.swift */,
+				D4DFB3712C81BF5C0064B69D /* CategoryView.swift */,
+
 			);
 			path = SearchPage;
 			sourceTree = "<group>";
