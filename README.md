@@ -5,6 +5,8 @@ This is a movie search app that allows you to view the latest and upcoming movie
 
 **Little reminder:** You need to request your own TMDB API key (on their website) to access the API. Also, be careful not to push your API key to GitHub—it should remain private!
 
+A collaboration with [Joey0929](https://github.com/joey0929)
+
 ## Outline
 1. SwiftUI
 2. WebKit
