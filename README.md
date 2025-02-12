@@ -1,5 +1,5 @@
 <!--![Project Screenshot](https://i.imgur.com/SNJ81iA.jpg)-->
-<img src="https://i.imgur.com/SNJ81iA.jpg" width="500">
+<img src="https://i.imgur.com/SNJ81iA.jpg" width="350">
 
 # Reflix
 
