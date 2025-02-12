@@ -1,3 +1,5 @@
+![Project Screenshot](https://imgur.com/a/sIKEqnb)
+
 # Reflix
 
 ## Description
